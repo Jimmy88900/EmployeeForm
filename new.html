@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <link href="app1.css" type="text/css" rel="stylesheet"/>
+<script src='employee.js'></script>
+<body ng-controller="myCtrl">
+	<div class="logo">
+		<p> Employee Form <p>
+	</div>
+		<div class="sec"> 
+			<form>
+				Name: <input ng-model="name" placeholder="Enter your name" ng-blur="getname();"><br>
+				Address : <input ng-model="address"><br>
+				Email:<input ng-model="email"><br>
+				<!-- Employee type:<select ng-model="employement">  
+				<option selected="Empolyee Type" value="Default">(Please select Employement)</option>  
+				<option value="Fulltime">Fulltime</option>  
+				<option value="Contract">Contract</option>  
+				<option value="C2C">C2C</option>    
+				</select><br> -->
+				Employement Type: 
+			      <select ng-model="employeetype">
+			        <option  ng-repeat="x in employee" >{{x.type}}</option>
+			      </select><br>
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset">
+				</div>
+			</form>
+
+		<div >
+        <!--Body content-->
+	<ul class="panel"  > 
+		<li class="first">
+			<div class="imagepanel">
+						<div > Name :{{name}}</div>
+						</div>
+		</li>
+			
+
+			<li>
+					<div class="imagepanel">
+						<div > Address :{{address}}</div>
+						<div > Employement Type:{{employeetype}}</div>
+
+					</div>
+			</li>
+				<li class="last">
+					<div class="imagepanel">
+						<div> Email: {{email}}</div>
+					</div>
+				</li>
+
+	</ul>
+
+<script>
+// var app = angular.module('myApp', []);
+// app.controller('myCtrl', function($scope) {
+//     $scope.name = "Enter your Name";
+//     $scope.address="Your Address";
+//     $scope.email="Enter a valid email";
+//     $scope.employement="Please select an option";
+// });
+</script>
+
+
+
+</body>
+</html>
